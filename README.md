@@ -2,7 +2,7 @@
 
 ## Lab 3
 
-<img src="YOUR_GIF_URL_HERE" width=200><br>
+<img src="https://github.com/rebecaaaaa/Flashcardz2-master/blob/Flashcardz2/Flashcardz2.02gif.gif" width=200><br>
 
 ## Required
 - [x] User can browse through multiple flashcards
