@@ -1,4 +1,3 @@
-📝 `NOTE` Paste this template at the top of your existing `README.md` file from the last lab.
 
 ## Lab 4
 
@@ -6,9 +5,7 @@
 
 ### App Walk-though
 
-<img src="YOUR_GIF_URL_HERE" width=200><br>
-
-`TODO://` In the User stories section below, add an `x` between the `-[ ]` like this `- [x]` for any user story you complete. (☝️ Remove this paragraph after after checking off user stories)
+<img src=https://github.com/rebecaaaaa/Flashcardz2-master/blob/Flashcardz2/FinalFlashcardz2.04gif.gif width=200><br>
 
 ## Required
 - [x] User should see the app icon 
