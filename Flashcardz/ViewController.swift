@@ -61,11 +61,29 @@ class ViewController: UIViewController{
     }
 
     @IBAction func didTapOnFlashcard(_ sender: Any) {
-        if(frontLabel.isHidden){
-            frontLabel.isHidden = false
-        } else {
-            frontLabel.isHidden = true
-        }
+        flipFlashcard()
+    }
+    func flipFlashcard(){
+        UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight, animations: {
+            if(self.frontLabel.isHidden){
+                self.frontLabel.isHidden = false
+            } else {
+                self.frontLabel.isHidden = true
+            }
+        })
+    }
+    func animateCardOut(){
+        UIView.animate(withDuration: 0.3, animations: {
+            self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+        }, completion: { finished in
+            self.updateLabels()
+            self.animateCardIn()
+        })
+    }
+    func animateCardIn(){
+        card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        UIView.animate(withDuration: 0.3){
+            self.card.transform = CGAffineTransform.identity}
     }
     func updateFlashcard(question: String, answer: String, extraAnswerOne: String?, extraAnswerTwo: String?){
         let flashcard = Flashcard(question: question, answer: answer)
@@ -140,7 +158,7 @@ class ViewController: UIViewController{
     }
     
     @IBAction func didTapOnNext(_ sender: Any) {
-    
+    animateCardOut()
         // Increase current index
         //currentIndex = currentIndex + 1
         currentIndex += 1;
@@ -151,6 +169,7 @@ class ViewController: UIViewController{
         updateNextPrevButtons()
     }
     @IBAction func didTapOnPrev (sender:Any){
+        animateCardIn()
         // Decrease current index
         currentIndex -= 1;
         
